@@ -8,8 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface MazeMyScene : SKScene
+
+@interface MazeMyScene : SKScene<SKPhysicsContactDelegate>
 {
-SKSpriteNode *sprite;
+    SKSpriteNode *sprite;
+    SKSpriteNode *end;
 }
+
+-(void)didBeginContact:(SKPhysicsContact *)contact;
 @end
+
