@@ -9,5 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface MazeMyScene : SKScene
-
+{
+SKSpriteNode *sprite;
+}
 @end
