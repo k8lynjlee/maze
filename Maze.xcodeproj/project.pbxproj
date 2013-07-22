@@ -24,6 +24,7 @@
 		BC1DBDF2179D9CF300628E17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBDCD179D9CF300628E17 /* UIKit.framework */; };
 		BC1DBDFA179D9CF300628E17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC1DBDF8179D9CF300628E17 /* InfoPlist.strings */; };
 		BC1DBDFC179D9CF300628E17 /* MazeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1DBDFB179D9CF300628E17 /* MazeTests.m */; };
+		BC1DBE08179D9FD300628E17 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBE07179D9FD300628E17 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		BC1DBDF7179D9CF300628E17 /* MazeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MazeTests-Info.plist"; sourceTree = "<group>"; };
 		BC1DBDF9179D9CF300628E17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BC1DBDFB179D9CF300628E17 /* MazeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeTests.m; sourceTree = "<group>"; };
+		BC1DBE05179D9F3C00628E17 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BC1DBE07179D9FD300628E17 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1DBE08179D9FD300628E17 /* CoreMotion.framework in Frameworks */,
 				BC1DBDCC179D9CF300628E17 /* CoreGraphics.framework in Frameworks */,
 				BC1DBDCE179D9CF300628E17 /* UIKit.framework in Frameworks */,
 				BC1DBDD0179D9CF300628E17 /* SpriteKit.framework in Frameworks */,
@@ -109,6 +113,8 @@
 		BC1DBDC8179D9CF300628E17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC1DBE07179D9FD300628E17 /* CoreMotion.framework */,
+				BC1DBE05179D9F3C00628E17 /* Accelerate.framework */,
 				BC1DBDC9179D9CF300628E17 /* Foundation.framework */,
 				BC1DBDCB179D9CF300628E17 /* CoreGraphics.framework */,
 				BC1DBDCD179D9CF300628E17 /* UIKit.framework */,
