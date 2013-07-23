@@ -137,8 +137,8 @@ static const uint32_t targetCategory = 0x1 << 2;
     SKSpriteNode *wall3 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(160,3)];
     wall3.position = CGPointMake(CGRectGetMaxX(self.frame)- 138, 250);
     
-    SKSpriteNode *wall4 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(3,80)];
-    wall4.position = CGPointMake(CGRectGetMaxX(self.frame) - 58, 235);
+    SKSpriteNode *wall4 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(3,63)];
+    wall4.position = CGPointMake(CGRectGetMaxX(self.frame) - 58, 220);
     
     SKSpriteNode *wall5 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(3,65)];
     wall5.position = CGPointMake((CGRectGetMidX(self.frame) - 57), 245);
@@ -197,13 +197,16 @@ static const uint32_t targetCategory = 0x1 << 2;
     SKSpriteNode *wall19 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(3,98)];
     wall19.position = CGPointMake(CGRectGetMidX(self.frame) + 56, CGRectGetMidY(self.frame) + 14);
     
-    SKSpriteNode *wall20 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(3,90)];
-    wall20.position = CGPointMake(CGRectGetMaxX(self.frame) - 30, CGRectGetMidY(self.frame) + 18);
+    SKSpriteNode *wall20 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(3,126)];
+    wall20.position = CGPointMake(CGRectGetMaxX(self.frame) - 30, CGRectGetMidY(self.frame) - 2);
     
     SKSpriteNode *wall21 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(30,3)];
-    wall21.position = CGPointMake(CGRectGetMaxX(self.frame) - 15, CGRectGetMidY(self.frame) + 64);
+    wall21.position = CGPointMake(CGRectGetMaxX(self.frame) - 15, CGRectGetMidY(self.frame) - 14);
     
-    NSArray *walls = [[NSArray alloc] initWithObjects:wall1, wall2, wall3, wall4, wall5, edge1, edge2, edge3, edge4, wall6,wall7, wall8 , wall9,wall10,wall11,wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21
+    SKSpriteNode *wall22 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(44,3)];
+    wall22.position = CGPointMake(CGRectGetMaxX(self.frame) - 52, CGRectGetMidY(self.frame) + 38);
+    
+    NSArray *walls = [[NSArray alloc] initWithObjects:wall1, wall2, wall3, wall4, wall5, edge1, edge2, edge3, edge4, wall6,wall7, wall8 , wall9,wall10,wall11,wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22
                       ,nil];
     
  
