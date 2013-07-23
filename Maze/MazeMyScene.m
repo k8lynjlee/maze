@@ -206,7 +206,13 @@ static const uint32_t targetCategory = 0x1 << 2;
     SKSpriteNode *wall22 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(44,3)];
     wall22.position = CGPointMake(CGRectGetMaxX(self.frame) - 52, CGRectGetMidY(self.frame) + 38);
     
-    NSArray *walls = [[NSArray alloc] initWithObjects:wall1, wall2, wall3, wall4, wall5, edge1, edge2, edge3, edge4, wall6,wall7, wall8 , wall9,wall10,wall11,wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22
+    SKSpriteNode *wall23 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(44,3)];
+    wall23.position = CGPointMake(CGRectGetMaxX(self.frame) - 82, CGRectGetMidY(self.frame)+ 10);
+    
+    SKSpriteNode *wall24 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(44,3)];
+    wall24.position = CGPointMake(CGRectGetMaxX(self.frame) - 52, CGRectGetMidY(self.frame) - 12);
+    
+    NSArray *walls = [[NSArray alloc] initWithObjects:wall1, wall2, wall3, wall4, wall5, edge1, edge2, edge3, edge4, wall6,wall7, wall8 , wall9,wall10,wall11,wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24
                       ,nil];
     
  
@@ -286,7 +292,7 @@ static const uint32_t targetCategory = 0x1 << 2;
          int xDiff = abs(sprite.position.x - tg.position.x);
          int yDiff = abs(sprite.position.y - tg.position.y);
          
-         if (xDiff < 40 && yDiff < 40)
+         if (xDiff < 24 && yDiff < 24)
          {
              NSLog(@"Equal coordinates for target %d!", i);
              [self targetHit:tg];
