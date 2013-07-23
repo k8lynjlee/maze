@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1709E8179ECDFD00FAEB9E /* LEDgray.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1709E7179ECDFD00FAEB9E /* LEDgray.png */; };
 		BC1DBDCA179D9CF300628E17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBDC9179D9CF300628E17 /* Foundation.framework */; };
 		BC1DBDCC179D9CF300628E17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBDCB179D9CF300628E17 /* CoreGraphics.framework */; };
 		BC1DBDCE179D9CF300628E17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBDCD179D9CF300628E17 /* UIKit.framework */; };
@@ -31,6 +32,9 @@
 		BC574C67179E43E100E1580D /* circuitBoardcopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C64179E433900E1580D /* circuitBoardcopy.jpg */; };
 		BC574C68179E43E400E1580D /* circuit.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C63179E423C00E1580D /* circuit.jpeg */; };
 		BC574C6A179E447200E1580D /* circuitBoardResized.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C69179E447200E1580D /* circuitBoardResized.jpg */; };
+		BC574C7C179E54C500E1580D /* LEDblue.png in Resources */ = {isa = PBXBuildFile; fileRef = BC574C79179E54C500E1580D /* LEDblue.png */; };
+		BC574C7D179E54C500E1580D /* LEDorange.png in Resources */ = {isa = PBXBuildFile; fileRef = BC574C7A179E54C500E1580D /* LEDorange.png */; };
+		BC574C7E179E54C500E1580D /* LEDred.png in Resources */ = {isa = PBXBuildFile; fileRef = BC574C7B179E54C500E1580D /* LEDred.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC1709E7179ECDFD00FAEB9E /* LEDgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LEDgray.png; sourceTree = "<group>"; };
 		BC1DBDC6179D9CF300628E17 /* Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1DBDC9179D9CF300628E17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC1DBDCB179D9CF300628E17 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +80,9 @@
 		BC574C64179E433900E1580D /* circuitBoardcopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circuitBoardcopy.jpg; sourceTree = "<group>"; };
 		BC574C65179E43CD00E1580D /* circuitBoard3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circuitBoard3.jpg; sourceTree = "<group>"; };
 		BC574C69179E447200E1580D /* circuitBoardResized.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circuitBoardResized.jpg; sourceTree = "<group>"; };
+		BC574C79179E54C500E1580D /* LEDblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LEDblue.png; sourceTree = "<group>"; };
+		BC574C7A179E54C500E1580D /* LEDorange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LEDorange.png; sourceTree = "<group>"; };
+		BC574C7B179E54C500E1580D /* LEDred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LEDred.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,9 @@
 		BC1DBDBD179D9CF300628E17 = {
 			isa = PBXGroup;
 			children = (
+				BC574C79179E54C500E1580D /* LEDblue.png */,
+				BC574C7A179E54C500E1580D /* LEDorange.png */,
+				BC574C7B179E54C500E1580D /* LEDred.png */,
 				BC1DBDD1179D9CF300628E17 /* Maze */,
 				BC1DBDF5179D9CF300628E17 /* MazeTests */,
 				BC1DBDC8179D9CF300628E17 /* Frameworks */,
@@ -148,6 +159,7 @@
 				BC1DBDE1179D9CF300628E17 /* MazeViewController.m */,
 				BC1DBDE3179D9CF300628E17 /* MazeMyScene.h */,
 				BC1DBDE4179D9CF300628E17 /* MazeMyScene.m */,
+				BC1709E7179ECDFD00FAEB9E /* LEDgray.png */,
 				BC574C69179E447200E1580D /* circuitBoardResized.jpg */,
 				BC574C65179E43CD00E1580D /* circuitBoard3.jpg */,
 				BC574C64179E433900E1580D /* circuitBoardcopy.jpg */,
@@ -270,8 +282,12 @@
 				BC1DBDD6179D9CF300628E17 /* InfoPlist.strings in Resources */,
 				BC1DBDE9179D9CF300628E17 /* Images.xcassets in Resources */,
 				BC574C68179E43E400E1580D /* circuit.jpeg in Resources */,
+				BC574C7D179E54C500E1580D /* LEDorange.png in Resources */,
+				BC574C7E179E54C500E1580D /* LEDred.png in Resources */,
 				BC574C62179E419400E1580D /* circuitBoard.jpg in Resources */,
+				BC574C7C179E54C500E1580D /* LEDblue.png in Resources */,
 				BC1DBDE7179D9CF300628E17 /* Spaceship.png in Resources */,
+				BC1709E8179ECDFD00FAEB9E /* LEDgray.png in Resources */,
 				BC574C66179E43CD00E1580D /* circuitBoard3.jpg in Resources */,
 				BC1DBDDF179D9CF300628E17 /* Main.storyboard in Resources */,
 				BC574C6A179E447200E1580D /* circuitBoardResized.jpg in Resources */,

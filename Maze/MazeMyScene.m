@@ -12,11 +12,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-
-
 @implementation MazeMyScene
 static const uint32_t boxCategory   =  0x1 << 0;
 static const uint32_t wallCategory   =  0x1 << 1;
+static const uint32_t targetCategory = 0x1 << 2;
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
@@ -28,7 +27,9 @@ static const uint32_t wallCategory   =  0x1 << 1;
         SKSpriteNode *backgroundImage = [[SKSpriteNode alloc] initWithImageNamed:@"circuitBoardResized.jpg"];
         backgroundImage.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
         [self addChild:backgroundImage];
+        
         self.physicsWorld.gravity = CGPointMake(0,0);
+        
         self.physicsWorld.contactDelegate = self;
         
         /*
@@ -41,22 +42,27 @@ static const uint32_t wallCategory   =  0x1 << 1;
         self.backgroundColor = [SKColor lightGrayColor];
         
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         
         myLabel.text = @"Maze";
         myLabel.fontSize = 18;
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMaxY(self.frame) - 220);
-        NSLog(@"Max x: %f, max y: %f", CGRectGetMaxX(self.frame), CGRectGetMaxY(self.frame));
+       // NSLog(@"Max x: %f, max y: %f", CGRectGetMaxX(self.frame), CGRectGetMaxY(self.frame));
         
         [self addChild:myLabel];
     }
     [self buildWalls];
     [self addStart];
-    
+    [self buildTargets];
     //[motion setAccelerometerUpdateInterval:0.5];
     //[motion startAccelerometerUpdates];
 
+    found1 = NO;
+    found2 = NO;
+    found3 = NO;
+    allFound = NO;
+    //record = [[NSMutableArray alloc] initWithObjects:[found1, found2, found3, allFound, nil]];
     
     return self;
 }
@@ -71,7 +77,7 @@ static const uint32_t wallCategory   =  0x1 << 1;
 - (void)addStart
 {
 
-    sprite = [[SKSpriteNode alloc] initWithColor:[SKColor purpleColor] size:CGSizeMake(10,10)];
+    sprite = [[SKSpriteNode alloc] initWithColor:[SKColor whiteColor] size:CGSizeMake(10,10)];
     sprite.position = CGPointMake(CGRectGetMidX(self.frame),
                                    CGRectGetMinY(self.frame) + 205);
 
@@ -81,10 +87,42 @@ static const uint32_t wallCategory   =  0x1 << 1;
      sprite.physicsBody.usesPreciseCollisionDetection = YES;
      sprite.physicsBody.restitution = 0.6;
      sprite.physicsBody.categoryBitMask = boxCategory;
-     sprite.physicsBody.collisionBitMask = wallCategory;
+     sprite.physicsBody.collisionBitMask = wallCategory | targetCategory;
 
     [self addChild:sprite];
+}
 
+
+- (void)buildTargets
+{
+    target1 = [[SKSpriteNode alloc] initWithImageNamed:@"LEDred.png"];
+    target2 = [[SKSpriteNode alloc] initWithImageNamed:@"LEDblue.png"];
+    target3 = [[SKSpriteNode alloc] initWithImageNamed:@"LEDorange.png"];
+
+    target1.name = @"target1";
+    target2.name = @"target2";
+    target3.name = @"target3";
+    target1.position = CGPointMake(CGRectGetMidX(self.frame)- 120, CGRectGetMidY(self.frame) + 60);
+    target2.position = CGPointMake(CGRectGetMidX(self.frame) + 40, CGRectGetMidY(self.frame) + 47);
+    target3.position = CGPointMake(CGRectGetMidX(self.frame) + 150, CGRectGetMidY(self.frame) - 40);
+    
+   // end = [[SKSpriteNode alloc] initWithColor:[SKColor greenColor] size:CGSizeMake(35, 35)];
+    
+    //end.position = CGPointMake((CGRectGetMidX(self.frame)) + 50, CGRectGetMidY(self.frame) + 50);
+     //   end.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:end.size];
+    
+    targets = [[NSArray alloc] initWithObjects:target1, target2, target3, nil];
+    for (SKSpriteNode *t in targets)
+    {
+        t.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:14];
+        t.physicsBody.dynamic = NO;
+        t.physicsBody.usesPreciseCollisionDetection = YES;
+        t.physicsBody.categoryBitMask = targetCategory;
+        t.physicsBody.collisionBitMask = boxCategory;
+        t.physicsBody.friction = 0.8;
+        [self addChild:t];
+
+    }
 }
 
 - (void)buildWalls
@@ -127,48 +165,52 @@ static const uint32_t wallCategory   =  0x1 << 1;
         wall.physicsBody.categoryBitMask = wallCategory;
         wall.physicsBody.collisionBitMask = boxCategory;
         [self addChild:wall];
-        
     }
-    
-    end = [[SKSpriteNode alloc] initWithColor:[SKColor greenColor] size:CGSizeMake(35, 35)];
-    end.position = CGPointMake((CGRectGetMidX(self.frame)) + 50, CGRectGetMidY(self.frame) + 50);
-    end.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:end.size];
-    end.physicsBody.dynamic = NO;
-    end.physicsBody.usesPreciseCollisionDetection = YES;
-
-    [self addChild:end];
     
 }
 
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    NSLog(@"Collision");
+    
+    if (contact.bodyA.categoryBitMask == 2|| contact.bodyB.categoryBitMask == 2)
+    {
+        NSLog(@"Hit a target");
+    }
+}
 
--(void)didBeginContact:(SKPhysicsContact *)contact
+/*
+- (void)didBeginContact:(SKPhysicsContact *)contact
 {
     NSLog(@"Collision");
 
-    if (contact.bodyA.node == end|| contact.bodyB.node == end)
+    if (contact.bodyA.categoryBitMask == 2|| contact.bodyB.categoryBitMask == 2)
+    {
+        NSLog(@"Hit a target");
+    }
+    
+ 
+    else if (contact.bodyA.node == end|| contact.bodyB.node == end)
     {
         NSLog(@"Hit");
-        /*
-        sprite.position = CGPointMake(CGRectGetMidX(self.frame),
-                                      CGRectGetMinY(self.frame) + 205);
-         */
-    }
-}
+     
+    } */
+//}
 
 
--(void)didEndContact:(SKPhysicsContact *)contact
+- (void)didEndContact:(SKPhysicsContact *)contact
 {
     NSLog(@"Ended contact");
 }
 
- -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
  
     
  for (UITouch *touch in touches) {
  CGPoint location = [touch locationInNode:self];
 
      CGPoint force = CGPointMake((location.x - sprite.position.x), (location.y - sprite.position.y));
-     NSLog(@"%f, %f", force.x, force.y);
+     // NSLog(@"%f, %f", force.x, force.y);
      if (force.x > 10)
          force.x = 10;
      if (force.x < -10)
@@ -178,10 +220,66 @@ static const uint32_t wallCategory   =  0x1 << 1;
      if (force.y < -10)
          force.y = -10;
      [sprite.physicsBody applyForce:force];
-
+     
+     /*
+     NSLog(@"%d %d", abs(sprite.position.x - target1.position.x), abs(sprite.position.y - target1.position.y));
+     if (abs(sprite.position.x - target1.position.x) < 15 && abs(sprite.position.y - target1.position.y) < 15)
+     {
+         NSLog(@"equal coordinates! ");
+     }
+     */
+     for (int i = 0; i < 3; i++)
+     {
+         SKSpriteNode *tg = targets[i];
+         int xDiff = abs(sprite.position.x - tg.position.x);
+         int yDiff = abs(sprite.position.y - tg.position.y);
+         
+         if (xDiff < 40 && yDiff < 40)
+         {
+             NSLog(@"Equal coordinates for target %d!", i);
+             [self targetHit:tg];
+        
+         }
+     }
  }
 
  }
+
+-(void)targetHit:(SKSpriteNode *)s
+{
+   if ([s.name  isEqual: @"target1"])
+   {
+       //CIFilter *filter = [[CIFilter alloc] init];
+       
+       //SKTexture *texture1 = [[SKTexture alloc] init];
+       //[texture1 textureByApplyingCIFilter:filter];
+       //s.texture = texture1;
+
+       NSLog(@"0");
+       //s.texture = textureWithImageNamed:(@"LEDred.png");
+       
+       [s removeFromParent];
+       found1 = YES;
+   }
+    else if ([s.name isEqual: @"target2"])
+    {
+        NSLog(@"1");
+        [s removeFromParent];
+        found2 = YES;
+    }
+    else if ([s.name isEqual: @"target3"])
+    {
+        NSLog(@"2");
+        [s removeFromParent];
+        found3 = YES;
+    }
+    if ((found1 == YES) && (found2 == YES) && (found3 == YES))
+    {
+        NSLog(@"All the targets have been hit");
+        myLabel.text = @"You completed the maze!";
+    }
+}
+
 
 
 @end
