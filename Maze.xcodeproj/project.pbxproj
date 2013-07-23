@@ -25,6 +25,12 @@
 		BC1DBDFA179D9CF300628E17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BC1DBDF8179D9CF300628E17 /* InfoPlist.strings */; };
 		BC1DBDFC179D9CF300628E17 /* MazeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC1DBDFB179D9CF300628E17 /* MazeTests.m */; };
 		BC1DBE08179D9FD300628E17 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBE07179D9FD300628E17 /* CoreMotion.framework */; };
+		BC574C60179E051200E1580D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC574C5F179E051200E1580D /* QuartzCore.framework */; };
+		BC574C62179E419400E1580D /* circuitBoard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C61179E419400E1580D /* circuitBoard.jpg */; };
+		BC574C66179E43CD00E1580D /* circuitBoard3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C65179E43CD00E1580D /* circuitBoard3.jpg */; };
+		BC574C67179E43E100E1580D /* circuitBoardcopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C64179E433900E1580D /* circuitBoardcopy.jpg */; };
+		BC574C68179E43E400E1580D /* circuit.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C63179E423C00E1580D /* circuit.jpeg */; };
+		BC574C6A179E447200E1580D /* circuitBoardResized.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC574C69179E447200E1580D /* circuitBoardResized.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,12 @@
 		BC1DBDFB179D9CF300628E17 /* MazeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeTests.m; sourceTree = "<group>"; };
 		BC1DBE05179D9F3C00628E17 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BC1DBE07179D9FD300628E17 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		BC574C5F179E051200E1580D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BC574C61179E419400E1580D /* circuitBoard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circuitBoard.jpg; sourceTree = "<group>"; };
+		BC574C63179E423C00E1580D /* circuit.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = circuit.jpeg; path = ../circuit.jpeg; sourceTree = "<group>"; };
+		BC574C64179E433900E1580D /* circuitBoardcopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circuitBoardcopy.jpg; sourceTree = "<group>"; };
+		BC574C65179E43CD00E1580D /* circuitBoard3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circuitBoard3.jpg; sourceTree = "<group>"; };
+		BC574C69179E447200E1580D /* circuitBoardResized.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = circuitBoardResized.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC574C60179E051200E1580D /* QuartzCore.framework in Frameworks */,
 				BC1DBE08179D9FD300628E17 /* CoreMotion.framework in Frameworks */,
 				BC1DBDCC179D9CF300628E17 /* CoreGraphics.framework in Frameworks */,
 				BC1DBDCE179D9CF300628E17 /* UIKit.framework in Frameworks */,
@@ -113,6 +126,7 @@
 		BC1DBDC8179D9CF300628E17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC574C5F179E051200E1580D /* QuartzCore.framework */,
 				BC1DBE07179D9FD300628E17 /* CoreMotion.framework */,
 				BC1DBE05179D9F3C00628E17 /* Accelerate.framework */,
 				BC1DBDC9179D9CF300628E17 /* Foundation.framework */,
@@ -134,6 +148,11 @@
 				BC1DBDE1179D9CF300628E17 /* MazeViewController.m */,
 				BC1DBDE3179D9CF300628E17 /* MazeMyScene.h */,
 				BC1DBDE4179D9CF300628E17 /* MazeMyScene.m */,
+				BC574C69179E447200E1580D /* circuitBoardResized.jpg */,
+				BC574C65179E43CD00E1580D /* circuitBoard3.jpg */,
+				BC574C64179E433900E1580D /* circuitBoardcopy.jpg */,
+				BC574C63179E423C00E1580D /* circuit.jpeg */,
+				BC574C61179E419400E1580D /* circuitBoard.jpg */,
 				BC1DBDE6179D9CF300628E17 /* Spaceship.png */,
 				BC1DBDE8179D9CF300628E17 /* Images.xcassets */,
 				BC1DBDD2179D9CF300628E17 /* Supporting Files */,
@@ -247,10 +266,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC574C67179E43E100E1580D /* circuitBoardcopy.jpg in Resources */,
 				BC1DBDD6179D9CF300628E17 /* InfoPlist.strings in Resources */,
 				BC1DBDE9179D9CF300628E17 /* Images.xcassets in Resources */,
+				BC574C68179E43E400E1580D /* circuit.jpeg in Resources */,
+				BC574C62179E419400E1580D /* circuitBoard.jpg in Resources */,
 				BC1DBDE7179D9CF300628E17 /* Spaceship.png in Resources */,
+				BC574C66179E43CD00E1580D /* circuitBoard3.jpg in Resources */,
 				BC1DBDDF179D9CF300628E17 /* Main.storyboard in Resources */,
+				BC574C6A179E447200E1580D /* circuitBoardResized.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

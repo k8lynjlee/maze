@@ -13,7 +13,9 @@
 {
     SKSpriteNode *sprite;
     SKSpriteNode *end;
+
 }
+
 
 -(void)didBeginContact:(SKPhysicsContact *)contact;
 @end
