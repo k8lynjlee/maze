@@ -7,7 +7,6 @@
 //
 
 #import "MazeViewController.h"
-#import "MazeMyScene.h"
 
 @implementation MazeViewController
 
@@ -21,11 +20,13 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [MazeMyScene sceneWithSize:skView.bounds.size];
+    MazeMyScene * scene = [MazeMyScene sceneWithSize:skView.bounds.size];
+    [scene setDelegate:self];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:scene];
+    
 }
 
 - (BOOL)shouldAutorotate
@@ -46,6 +47,15 @@
 {
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
+}
+
+-(void)gameFinished {
+    UIImage *scaryImage = [[UIImage alloc] init];
+    scaryImage = [UIImage imageNamed:@"funny-scary-video.jpg"];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [imageView setImage:scaryImage];
+    self.view = imageView;
 }
 
 @end

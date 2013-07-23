@@ -8,6 +8,13 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+@protocol MYMazeDelegate
+
+@optional
+
+-(void) gameFinished;
+
+@end
 
 @interface MazeMyScene : SKScene<SKPhysicsContactDelegate>
 {
@@ -26,6 +33,9 @@
     
 
 }
+
+
+@property id<MYMazeDelegate> delegate;
 
 //-(void)didBeginContact:(SKPhysicsContact *)contact;
 

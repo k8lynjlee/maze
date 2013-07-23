@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60DA6648179F19DF0052D1EF /* funny-scary-video.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60DA6647179F19DF0052D1EF /* funny-scary-video.jpg */; };
 		BC1709E8179ECDFD00FAEB9E /* LEDgray.png in Resources */ = {isa = PBXBuildFile; fileRef = BC1709E7179ECDFD00FAEB9E /* LEDgray.png */; };
 		BC1DBDCA179D9CF300628E17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBDC9179D9CF300628E17 /* Foundation.framework */; };
 		BC1DBDCC179D9CF300628E17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC1DBDCB179D9CF300628E17 /* CoreGraphics.framework */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60DA6647179F19DF0052D1EF /* funny-scary-video.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "funny-scary-video.jpg"; path = "../../../../Desktop/funny-scary-video.jpg"; sourceTree = "<group>"; };
 		BC1709E7179ECDFD00FAEB9E /* LEDgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LEDgray.png; sourceTree = "<group>"; };
 		BC1DBDC6179D9CF300628E17 /* Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC1DBDC9179D9CF300628E17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +177,7 @@
 		BC1DBDD2179D9CF300628E17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				60DA6647179F19DF0052D1EF /* funny-scary-video.jpg */,
 				BC1DBDD3179D9CF300628E17 /* Maze-Info.plist */,
 				BC1DBDD4179D9CF300628E17 /* InfoPlist.strings */,
 				BC1DBDD7179D9CF300628E17 /* main.m */,
@@ -283,6 +286,7 @@
 				BC1DBDE9179D9CF300628E17 /* Images.xcassets in Resources */,
 				BC574C68179E43E400E1580D /* circuit.jpeg in Resources */,
 				BC574C7D179E54C500E1580D /* LEDorange.png in Resources */,
+				60DA6648179F19DF0052D1EF /* funny-scary-video.jpg in Resources */,
 				BC574C7E179E54C500E1580D /* LEDred.png in Resources */,
 				BC574C62179E419400E1580D /* circuitBoard.jpg in Resources */,
 				BC574C7C179E54C500E1580D /* LEDblue.png in Resources */,

@@ -50,6 +50,7 @@ static const uint32_t targetCategory = 0x1 << 2;
                                        CGRectGetMaxY(self.frame) - 220);
        // NSLog(@"Max x: %f, max y: %f", CGRectGetMaxX(self.frame), CGRectGetMaxY(self.frame));
         
+        
         [self addChild:myLabel];
     }
     [self buildWalls];
@@ -212,7 +213,7 @@ static const uint32_t targetCategory = 0x1 << 2;
     SKSpriteNode *wall24 = [[SKSpriteNode alloc] initWithColor:[SKColor yellowColor] size:CGSizeMake(44,3)];
     wall24.position = CGPointMake(CGRectGetMaxX(self.frame) - 52, CGRectGetMidY(self.frame) - 12);
     
-    NSArray *walls = [[NSArray alloc] initWithObjects:wall1, wall2, wall3, wall4, wall5, edge1, edge2, edge3, edge4, wall6,wall7, wall8 , wall9,wall10,wall11,wall12, wall13, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24
+    NSArray *walls = [[NSArray alloc] initWithObjects:wall1, wall2, wall3, wall4, wall5, edge1, edge2, edge3, edge4, wall6,wall7, wall8 , wall9,wall10,wall11,wall12, wall14, wall15, wall16, wall17, wall18, wall19, wall20, wall21, wall22, wall23, wall24
                       ,nil];
     
  
@@ -334,7 +335,8 @@ static const uint32_t targetCategory = 0x1 << 2;
     if ((found1 == YES) && (found2 == YES) && (found3 == YES))
     {
         NSLog(@"All the targets have been hit");
-        myLabel.text = @"You completed the maze!";
+        [self.delegate gameFinished];
+
     }
 }
 

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface MazeViewController : UIViewController
+#import "MazeMyScene.h"
+
+@interface MazeViewController : UIViewController <MYMazeDelegate>
 
 @end
