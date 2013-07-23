@@ -154,6 +154,7 @@
 		BC1DBDD1179D9CF300628E17 /* Maze */ = {
 			isa = PBXGroup;
 			children = (
+				60DA6647179F19DF0052D1EF /* funny-scary-video.jpg */,
 				BC1DBDDA179D9CF300628E17 /* MazeAppDelegate.h */,
 				BC1DBDDB179D9CF300628E17 /* MazeAppDelegate.m */,
 				BC1DBDDD179D9CF300628E17 /* Main.storyboard */,
@@ -177,7 +178,6 @@
 		BC1DBDD2179D9CF300628E17 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				60DA6647179F19DF0052D1EF /* funny-scary-video.jpg */,
 				BC1DBDD3179D9CF300628E17 /* Maze-Info.plist */,
 				BC1DBDD4179D9CF300628E17 /* InfoPlist.strings */,
 				BC1DBDD7179D9CF300628E17 /* main.m */,
